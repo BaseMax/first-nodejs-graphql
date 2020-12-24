@@ -2,6 +2,8 @@
 
 Good example for starter and learning GraphQL + NodeJS easily and fastly. (Just in 10 minutes)
 
+If you would like to read more, you can check out official documentation at [here](https://graphql.org/graphql-js/running-an-express-graphql-server/).
+
 ---------
 
 # Max Base
