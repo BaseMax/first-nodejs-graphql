@@ -1,3 +1,10 @@
+/*
+ * @Name: First GraphQL
+ * @Author: Max Base
+ * @Repository: https://github.com/BaseMax/first-graphql
+ * @Date: 2020-12-24
+ */
+
 const express = require('express')
 const { graphqlHTTP } = require('express-graphql')
 const {
