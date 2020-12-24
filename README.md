@@ -13,7 +13,6 @@ If you would like to read more, you can check out official documentation at [her
     id,
     name
   }
-
 }
 ```
 
