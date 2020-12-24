@@ -28,6 +28,15 @@ const books = [
 	{id: 8, name: 'Beyond the Shadows', authorId: 3},
 ]
 
+const AuthorType = new GraphQLObjectType({
+	name: 'Author',
+	description: 'This represents a author of a book',
+	fields: () => ({
+		id: {type: GraphQLNonNull(GraphQLInt)},
+		name: {type: GraphQLNonNull(GraphQLString)},
+	})
+})
+
 const BookType = new GraphQLObjectType({
 	name: 'Book',
 	description: 'This represents a book written by an author',
