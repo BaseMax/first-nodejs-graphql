@@ -41,6 +41,12 @@ const AuthorType = new GraphQLObjectType({
 	fields: () => ({
 		id: {type: GraphQLNonNull(GraphQLInt)},
 		name: {type: GraphQLNonNull(GraphQLString)},
+		books: {
+			type: new GraphQLList(BookType),
+			resolve: (author) => {
+				return books.filter(book => book.authorId === author.id)
+			}
+		}
 	})
 })
 
@@ -51,6 +57,12 @@ const BookType = new GraphQLObjectType({
 		id: {type: GraphQLNonNull(GraphQLInt)},
 		name: {type: GraphQLNonNull(GraphQLString)},
 		authorId: {type: GraphQLNonNull(GraphQLInt)},
+		author: {
+			type: AuthorType,
+			resolve: (book) => {
+				return authors.find(author => author.id === book.authorId)
+			}
+		}
 	})
 })
 
@@ -58,6 +70,14 @@ const RootQueryType = new GraphQLObjectType({
 	name: 'Query',
 	description: 'Root Query',
 	fields: () => ({
+		book: {
+			type: BookType,
+			description: 'A Single Book',
+			args: {
+				id: { type: GraphQLInt }
+			},
+			resolve: (parent, args) => books.find(book => book.id === args.id)
+		},
 		books: {
 			type: new GraphQLList(BookType),
 			description: 'List of All Books',
@@ -75,11 +95,24 @@ const schema = new GraphQLSchema({
 	query: RootQueryType
 })
 
+// const schema = new GraphQLSchema({
+// 	query: new GraphQLObjectType({
+// 		name: 'HelloWorld',
+// 		fields: () => ({
+// 			message: {
+// 				type: GraphQLString,
+// 				resolve: (parent, args) => 'Hello World'
+// 			}
+// 		})
+// 	})
+// })
+
+// app.use(bodyParser.json())
+
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
 	graphql: true
 }))
-
 app.listen(5000, () => {
 	console.log('Server Running...')
 })
