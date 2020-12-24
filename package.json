@@ -6,6 +6,7 @@
   "author": "Max Base",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon index.js",
     "devStart": "nodemon index.js"
   },
   "dependencies": {
