@@ -151,9 +151,19 @@ const schema = new GraphQLSchema({
 
 // app.use(bodyParser.json())
 
-app.use('/graphql', graphqlHTTP({
+// app.use('/graphql', graphqlHTTP({
+//   schema: schema,
+//   graphiql: true
+// }))
+
+app.get('/graphql', graphqlHTTP({
   schema: schema,
   graphiql: true
+}))
+
+app.post('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: false
 }))
 
 app.listen(PORT, () => {
