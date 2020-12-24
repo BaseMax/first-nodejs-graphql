@@ -43,6 +43,9 @@ If you would like to read more, you can check out official documentation at [her
 
 - https://graphql.org/graphql-js/running-an-express-graphql-server
 - https://github.com/graphql/express-graphql
+- https://www.youtube.com/watch?v=n1mdAPFq2Os
+- https://www.youtube.com/watch?v=YBydg_Ui02Q
+- https://www.youtube.com/watch?v=ZQL7tL2S0oQ
 
 ---------
 
