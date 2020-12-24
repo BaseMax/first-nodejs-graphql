@@ -7,6 +7,7 @@ If you would like to read more, you can check out official documentation at [her
 ## Using
 
 ```
+$ yarn install
 $ yarn start
 ```
 
