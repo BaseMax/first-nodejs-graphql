@@ -1,7 +1,7 @@
 /*
  * @Name: First NodeJs GraphQL
  * @Author: Max Base
- * @Repository: https://github.com/BaseMax/first-graphql
+ * @Repository: https://github.com/BaseMax/first-nodejs-graphql
  * @Date: 2020-12-24
  */
 
