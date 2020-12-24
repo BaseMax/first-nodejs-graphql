@@ -111,7 +111,7 @@ const schema = new GraphQLSchema({
 
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
-	graphql: true
+	graphiql: true
 }))
 app.listen(5000, () => {
 	console.log('Server Running...')
