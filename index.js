@@ -17,6 +17,7 @@ const {
 } = require('graphql')
 
 const app = express()
+const PORT = 5000
 
 const authors = [
   {id: 1, name: 'J. K. Rowling'},
@@ -154,6 +155,7 @@ app.use('/graphql', graphqlHTTP({
   schema: schema,
   graphiql: true
 }))
-app.listen(5000, () => {
+
+app.listen(PORT, () => {
   console.log('Server Running...')
 })
