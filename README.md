@@ -4,6 +4,38 @@ Good example for starter and learning GraphQL + NodeJS easily and fastly. (Just 
 
 If you would like to read more, you can check out official documentation at [here](https://graphql.org/graphql-js/running-an-express-graphql-server/).
 
+## Examples
+
+#### List of all books id and name
+```
+{
+  books {
+    id,
+    name
+  }
+
+}
+```
+
+![first nodejs graphql](screen1.png)
+
+#### List of authors and their books
+
+```
+{
+  authors {
+    id
+    name
+    books {
+      name
+    }
+  }
+}
+```
+
+![first nodejs graphql](screen2.png)
+
+
 ## Similar Repository
 
 - https://github.com/BaseMax/first-nodejs-apollo-graphql/
