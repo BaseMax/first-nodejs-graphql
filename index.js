@@ -20,12 +20,16 @@ const {
 
 
 const app = express();
-const PORT = 5000;
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/library_db')
-  .then(() => console.log('Connected to MongoDB!'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// initialize .env
+require('dotenv').config({ path: './config/.env' });
+
+
+// connect to mong db
+const db = mongoose.connect(`${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`);
+
+db.then(() => console.log('Connected to MongoDB!')).catch(err => console.error('MongoDB connection error:', err));
 
 
 const AuthorType = new GraphQLObjectType({
@@ -140,6 +144,6 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });
